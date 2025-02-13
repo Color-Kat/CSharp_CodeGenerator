@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace CodeGenerator
 {
+    class Metadata
+    {
+        public string StructName { get; set; }
+        public string[] StructData { get; set; }
+    }
+
     internal class CodeGenerator
     {
 
@@ -22,6 +29,22 @@ namespace CodeGenerator
             "dataGridView.Rows[rowIndex].Cells[#columnIndex].Value = encoding.GetString(outputBytes, 0, outputBytes.Length);",
             "dataGridView.Rows[rowIndex].Cells[#columnIndex].Value = inputBuffer->#field.ToString();"
         };
+
+        public void generateCode2(string templateFilePath, string metadataFilePath, string outputFilePath)
+        {
+            string jsonContent = File.ReadAllText(metadataFilePath);
+            var metadata = JsonSerializer.Deserialize<Metadata>(jsonContent);
+            string template = File.ReadAllText(templateFilePath);
+
+            if (metadata != null)
+            {
+                string structData = string.Join("\n    ", metadata.StructData);
+                string generatedCode = template.Replace("#StructName", metadata.StructName)
+                                               .Replace("#StructData", structData);
+
+                File.WriteAllText(outputFilePath, generatedCode);
+            }
+        }
 
         public void generateCode(string templateFilePath, string metadataFilePath)
         {

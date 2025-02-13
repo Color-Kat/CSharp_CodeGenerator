@@ -13,7 +13,7 @@ namespace CodeGenerator
         {
             if (TemplateDialog.ShowDialog() == DialogResult.OK)
                 if (MetadataDialog.ShowDialog() == DialogResult.OK)
-                    CodeGenerator.generateCode(TemplateDialog.FileName, MetadataDialog.FileName);
+                    CodeGenerator.generateCode2(TemplateDialog.FileName, MetadataDialog.FileName, "GeneratedCode.cs");
         }
     }
 }

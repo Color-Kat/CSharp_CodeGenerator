@@ -1,4 +1,0 @@
-MyStruct
-int id // ID
-double value // Value
-char name[20] // Name
