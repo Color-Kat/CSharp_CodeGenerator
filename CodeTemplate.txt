@@ -1,0 +1,14 @@
+using System;
+
+public struct #structName
+{
+    #structData
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Generated struct #structName loaded.");
+    }
+}
