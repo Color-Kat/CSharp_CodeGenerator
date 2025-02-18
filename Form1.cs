@@ -13,7 +13,9 @@ namespace CodeGenerator
         {
             if (TemplateDialog.ShowDialog() == DialogResult.OK)
                 if (MetadataDialog.ShowDialog() == DialogResult.OK)
+                {
                     CodeGenerator.generateCode2(TemplateDialog.FileName, MetadataDialog.FileName, "GeneratedCode.cs");
+                    MessageBox.Show("Run `dotnet build` in bin directory with GeneratedCode.cs");
+                }
         }
-    }
 }

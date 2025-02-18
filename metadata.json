@@ -1,8 +1,8 @@
 {
-	"StructName": "MyStruct",
+	"StructName": "Test",
 	"StructData": [
-		"int id; // ID",
-		"double value; // Value",
-		"char name[20]; // Name"
+		"public int id; // ID",
+		"public double value; // Value",
+		"public string name; // Name"
 	]
 }

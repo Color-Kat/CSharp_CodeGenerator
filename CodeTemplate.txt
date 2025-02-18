@@ -10,5 +10,6 @@ public class Program
     public static void Main()
     {
         Console.WriteLine("Generated struct #StructName loaded.");
+        Console.ReadLine();
     }
 }
