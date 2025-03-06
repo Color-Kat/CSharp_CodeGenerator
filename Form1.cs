@@ -18,4 +18,5 @@ namespace CodeGenerator
                     MessageBox.Show("Run `dotnet build` in bin directory with GeneratedCode.cs");
                 }
         }
+    }
 }

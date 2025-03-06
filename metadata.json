@@ -1,5 +1,5 @@
 {
-	"StructName": "Test",
+	"StructName": "Test2",
 	"StructData": [
 		"public int id; // ID",
 		"public double value; // Value",
